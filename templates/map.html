@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>Project Madayaw</title> 
+  <script src="http://maps.google.com/maps/api/js?sensor=false" 
+          type="text/javascript"></script>
+         
+</head> 
+<body>
+  <div id="map" style="width: 100%; height: 800px;"></div>
+  
+  <script type="text/javascript">
+    var locations = [
+      ['Region IX: Zamboanga Peninsula (Zamboanga City)', 7.1622793, 121.8707343, 6],
+      ['Region X: Northern Mindanao (Cagayan de Oro City)', 8.3824627,124.4926387, 5],
+      ['Region XI: Davao Region (Davao City)', 7.2532789,125.1708753, 4],
+      ['Region XII: Soccsksargen (Koronadal City)', 6.4643402,124.8424074, 3],
+      ['Region XIII: Caraga Region (Butuan City)', 8.8951832, 125.4423609, 2],
+      ['ARMM Region: Cotabato City', 7.1986708,124.1744192, 1]
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 8,
+      center: new google.maps.LatLng(7.798871,124.597723),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+</body>
+</html>
