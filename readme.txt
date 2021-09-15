@@ -14,3 +14,7 @@ b. git commit -m "commit"
 c. (optional) git remote add origin https://github.com/minna-lproc/madayaw.git
 d. (optional) git remote -v
 e. git push origin main
+
+Deploy to App Engine
+
+DNS Map to UIC server
