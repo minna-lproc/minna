@@ -29,6 +29,11 @@
       right: 0px;
       margin-bottom: 0px;
     }
+
+    hr.rounded {
+      border-top: 6px solid #bbb;
+      border-radius: 5px;
+    }
   </style>
   <script>
     var locations = [
@@ -115,7 +120,8 @@
       <a href="{{ url_for('activities') }}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">NEWS
         AND
         ACTIVITIES</a>
-      <a href="{{ url_for('people') }}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">THE TEAM</a>
+      <a href="{{ url_for('people') }}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">THE
+        TEAM</a>
       <!--<a href="{{ url_for('publications') }}" class="w3-bar-item w3-button w3-padding-large"
         onclick="myFunction()">PUBLICATIONS</a>-->
       <a href="{{ url_for('index') }}#contact" class="w3-bar-item w3-button w3-padding-large"
