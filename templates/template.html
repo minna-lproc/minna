@@ -11,11 +11,23 @@
 
   <style type="text/css">
     /* Set the size of the div element that contains the map */
+    body {
+      margin-bottom: 50px;
+    }
+
     #map {
       height: 800px;
       /* The height is 800 pixels */
       width: 100%;
       /* The width is the width of the web page */
+    }
+
+    #footer {
+      position: fixed;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      margin-bottom: 0px;
     }
   </style>
   <script>
@@ -87,7 +99,7 @@
           MAP</a>
         <a href="{{ url_for('activities') }}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">NEWS AND
           ACTIVITIES</a>
-        <a href="{{ url_for('people') }}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PEOPLE</a>
+        <a href="{{ url_for('people') }}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">THE TEAM</a>
         <!--<a href="{{ url_for('publications') }}"
           class="w3-bar-item w3-button w3-padding-large w3-hide-small">PUBLICATIONS</a>-->
         <a href="{{ url_for('index') }}#contact"
@@ -100,9 +112,10 @@
     <div id="navDemo" class="w3-bar-block w3-indigo w3-hide w3-hide-large w3-hide-medium w3-top"
       style="margin-top:46px">
       <a href="{{ url_for('index') }}#map" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MAP</a>
-      <a href="{{ url_for('activities') }}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">NEWS AND
+      <a href="{{ url_for('activities') }}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">NEWS
+        AND
         ACTIVITIES</a>
-      <a href="{{ url_for('people') }}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PEOPLE</a>
+      <a href="{{ url_for('people') }}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">THE TEAM</a>
       <!--<a href="{{ url_for('publications') }}" class="w3-bar-item w3-button w3-padding-large"
         onclick="myFunction()">PUBLICATIONS</a>-->
       <a href="{{ url_for('index') }}#contact" class="w3-bar-item w3-button w3-padding-large"
