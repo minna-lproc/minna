@@ -8,11 +8,12 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" href="/static/img/icons/minna-icon.png" />
 
   <style type="text/css">
     /* Set the size of the div element that contains the map */
     body {
-      margin-bottom: 50px;
+      height: 100%;
     }
 
     #map {
@@ -23,11 +24,10 @@
     }
 
     #footer {
-      position: fixed;
-      bottom: 0px;
-      left: 0px;
-      right: 0px;
-      margin-bottom: 0px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      height: 80px;
     }
 
     hr.rounded {
@@ -132,15 +132,12 @@
 
       {% endblock %}
     </div>
+    <div class="w3-indigo w3-container" id="footer">
+      <p align="center">Privacy Policy | Terms of Use | &copy; Copyright 2021 by <a href="#">MinNa</a></p>
+    </div>
 
   </div>
-  <div class="w3-bar w3-indigo w3-card" id="footer">
-    {% block footer %}
-    <br>
-    <p align="center">Privacy Policy | Terms of Use | &copy; Copyright 2021 by <a href="#">MinNa</a></p>
-    <br>
-    {% endblock %}
-  </div>
+
 </body>
 
 </html>
