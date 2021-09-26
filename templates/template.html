@@ -100,10 +100,10 @@
         <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
           href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
         <a href="{{ url_for('index') }}" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-        <a href="{{ url_for('index') }}#map" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LANGUAGES
-          MAP</a>
         <a href="{{ url_for('activities') }}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">NEWS AND
           ACTIVITIES</a>
+        <a href="{{ url_for('index') }}#map" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LANGUAGE
+          MAP</a>
         <a href="{{ url_for('people') }}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">THE TEAM</a>
         <!--<a href="{{ url_for('publications') }}"
           class="w3-bar-item w3-button w3-padding-large w3-hide-small">PUBLICATIONS</a>-->
@@ -116,7 +116,7 @@
     <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
     <div id="navDemo" class="w3-bar-block w3-indigo w3-hide w3-hide-large w3-hide-medium w3-top"
       style="margin-top:46px">
-      <a href="{{ url_for('index') }}#map" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MAP</a>
+      <a href="{{ url_for('index') }}#map" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LANGUAGE MAP</a>
       <a href="{{ url_for('activities') }}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">NEWS
         AND
         ACTIVITIES</a>
