@@ -1,0 +1,82 @@
+{% extends 'template.html' %}
+{% block content %}
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:950px" id="home">
+  <img class="w3-hover-grayscale" src="../static/img/icons/MinNa LProc-cover.png" alt="tools"
+    style="max-width: 100%; max-height: 100%;">
+  <!--<img class="w3-hover-grayscale" src="../static/img/icons/minna-logo-2.png" alt="tools"
+    style="max-width: 100%; max-height: 100%;">-->
+  <!--<h2 class="w3-wide">MinNa: <strong><font color="#bfa42a">Min</font></strong>danao<strong>
+      <font color="#bfa42a">Na</font></strong>tural Language Processing Research and Development Laboratory</h2>-->
+  <p class="w3-opacity"><i>Dayon kamo! Let's Tour MinNa Laboratory!</i></p>
+  <p class="w3-justify">MinNa is a research and development laboratory established to work on the development of
+    Natural Language Processing (NLP) tools, technologies, and distributable digital resources of Mindanao Languages.
+    With the increasing number of endangered languages, it is high time that we intensify Research and Development works
+    that involve the collection, digitalization, storage, and dissemination of language resources, as well as the
+    development
+    of task-specific trained applications. <br><br><br>
+
+    MinNa Laboratory has been generously funded by the
+    <a href="https://pcieerd.dost.gov.ph/">Department of Science and Technology - Philippine Council for
+      Industry, Energy and Emerging Technology Research and Development
+      (DOST-PCIEERD)</a> with high-end equipment to enable Mindanao NLP researchers conduct research works.
+    The <a href="https://www.uic.edu.ph/">University of the Immaculate Conception</a>
+    serves as the implementing agency to advance these research works to its complete implementation and deployment.
+  </p>
+
+  <div class="w3-third w3-margin-bottom">
+    <div class="w3-container w3-white">
+      <p><b>Tools</b></p>
+      <img class="w3-hover-grayscale" src="../static/img/icons/tools_new.png" alt="tools"
+        style="width: 100px;height: 100px;">
+      <p>Software Tools to use for task-specific NLP operations.</p>
+    </div>
+  </div>
+  <div class="w3-third w3-margin-bottom">
+    <div class="w3-container w3-white">
+      <p><b>Technologies</b></p>
+      <img class="w3-hover-grayscale" src="../static/img/icons/techies2.png" alt="tools"
+        style="width: 100px;height: 100px;">
+      <p>Software and applications developed applying NLP techniques.</p>
+    </div>
+  </div>
+  <div class="w3-third w3-margin-bottom">
+    <div class="w3-container w3-white">
+      <p><b>Resources</b></p>
+      <img class="w3-hover-grayscale" src="../static/img/icons/resources1.png" alt="tools"
+        style="width: 100px;height: 100px;">
+      <p>Raw and curated data for NLP.</p>
+    </div>
+  </div>
+</div>
+<div id="map"></div>
+</div>
+<!-- The Contact Section -->
+<div class="w3-container w3-content w3-padding-64" style="max-width:950px" id="contact">
+  <h2 class="w3-wide w3-center">CONTACT US</h2>
+  <p class="w3-opacity w3-center"><i>Andam kami nga mualagad kaninyo!</i></p>
+  <div class="w3-row w3-padding-32">
+    <div class="w3-col m6 w3-large w3-margin-bottom">
+      <p><i class="fa fa-map-marker" style="width:30px"></i>UIC, Fr. Selga St., Davao City, PH
+        <br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: +63905 228 8173<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: minna@uic.edu.ph<br>
+      </p>
+    </div>
+    <div class="w3-col m6">
+      <form action="/action_page.php" target="_blank">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+          </div>
+        </div>
+        <textarea class="w3-input w3-border" placeholder="Message" required name="Message" cols="50"
+          rows="10"> </textarea>
+        <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
