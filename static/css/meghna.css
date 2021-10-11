@@ -610,6 +610,7 @@ a:hover {
 }
 .hero-area {
   background-size: cover;
+  background-image: url("../img/icons/background.png");
   height: 100vh;
   position: relative;
   display: flex;
@@ -643,7 +644,7 @@ a:hover {
   color: #fff;
   text-transform: capitalize;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 3px;
 }
 
 @media (max-width: 480px) {
