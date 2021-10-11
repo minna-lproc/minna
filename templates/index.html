@@ -1,19 +1,28 @@
 {% extends 'template.html' %}
 {% block content %}
+<!-- Welcome Section -->
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:100% " id="welcome-slider">
+  <section class="hero-area">
+    <video autoplay muted loop class="hero-video">
+      <source src="../static/img/icons/bg-vid.mp4" type="video/mp4">
+    </video>
+      <div class="block">
+        <h1>MinNa LProc</h1>
+        <p>Mindanao Natural Language Processing Research and Development Laboratory</p>
+        <br>
+        <a href="{{ url_for('index') }}#home" class="btn btn-transparent">Dayon kamo!</a>
+      </div>
+  </section>
+</div>
+
+<!-- Home Section -->
 <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1200px " id="home">
-  <!--<img class="w3-hover-grayscale w3-round" src="../static/img/icons/MinNa LProc-cover.png" alt="tools"
-    style="max-width: 100%; max-height: 100%;">-->
-  <!--<h2 class="w3-wide">MinNa: <strong><font color="#bfa42a">Min</font></strong>danao<strong>
-      <font color="#bfa42a">Na</font></strong>tural Language Processing Research and Development Laboratory</h2>-->
-  <br><br><br>
+
   <div class="w3-third w3-margin-bottom">
     <div class="w3-container">
       <p><b>Tools</b></p>
       <img class="w3-hover-grayscale" src="../static/img/icons/tools-1.png" alt="tools"
         style="width: 200px;height: 200px;">
-        <div class="overlay">
-          <div class="text">Tools</div>
-        </div>
       <p>Software Tools to use for task-specific NLP operations.</p>
     </div>
   </div>
@@ -45,11 +54,11 @@
       of task-specific trained applications.
     </p>
     <p class="w3-justify">MinNa Laboratory has been generously funded by the
-    <a href="https://pcieerd.dost.gov.ph/">Department of Science and Technology - Philippine Council for
-      Industry, Energy and Emerging Technology Research and Development
-      (DOST-PCIEERD)</a> with high-end equipment to enable Mindanao NLP researchers conduct research works.
-    The <a href="https://www.uic.edu.ph/">University of the Immaculate Conception</a>
-    serves as the implementing agency to advance these research works to its complete implementation and deployment.
+      <a href="https://pcieerd.dost.gov.ph/">Department of Science and Technology - Philippine Council for
+        Industry, Energy and Emerging Technology Research and Development
+        (DOST-PCIEERD)</a> with high-end equipment to enable Mindanao NLP researchers conduct research works.
+      The <a href="https://www.uic.edu.ph/">University of the Immaculate Conception</a>
+      serves as the implementing agency to advance these research works to its complete implementation and deployment.
     </p>
 
     <br><br><br>
