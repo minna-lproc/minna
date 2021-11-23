@@ -34,10 +34,10 @@ def news():
     return render_template('news_list.html')
 @app.route("/news#news01")
 def news01():
-    return render_template('news_1.html')
+    return render_template('./news/news_1.html')
 @app.route("/news#news02")
 def news02():
-    return render_template('news_2.html')
+    return render_template('./news/news_2.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
