@@ -38,6 +38,9 @@ def news01():
 @app.route("/news#news02")
 def news02():
     return render_template('./news/news_2.html')
+@app.route("/news#news03")
+def news03():
+    return render_template('./news/news_3.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
