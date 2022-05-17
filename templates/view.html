@@ -91,7 +91,7 @@ hr.solid {
             <div class="alert alert-success" role="alert">
               Your request has been sent successfully!
              </div>
-            <form class="form-group" method="POST" id = "contactForm">
+            <form class="form-group" id = "contactForm">
                 <label for = "name">Name</label>
                 <input type="text" id="name" id="name" class="form-control" required/>
                 <br />
@@ -152,36 +152,30 @@ hr.solid {
 
 
   $(document).ready(function () {
-  $("form").submit(function (event) {
-    var formData = {
-      name: $("#name").val(),
-      email: $("#email").val(),
-      organization: $("#organization").val(),
-      message: $("#message").val(),
+    $("#contactForm").submit(function (event) {
+      event.preventDefault();
 
-      superheroAlias: $("#superheroAlias").val(),
-    };
-   
-		  	formData.append("file", document.getElementById('file').files);
-				
-        console.log(formData)
+      var formData = new FormData();
+		  formData.append("file", document.getElementById('file').files);
+      formData.append('name', $('#name').val());
+      formData.append('email', $('#email').val());
+      formData.append('organization', $('#organization').val());
+      formData.append('message', $('#message').val());
 
-  //   $.ajax({
-  //     type: "POST",
-  //     url: "process.php",
-  //     data: formData,
-  //     dataType: "json",
-  //     encode: true,
-  //   }).done(function (data) {
-  //     console.log(data);
-  //   });
+      console.log(formData)
 
-  //   event.preventDefault();
-  // });
+        $.ajax({
+          type: "POST",
+          url: "/view",
+          data: formData,
+          processData: false,
+          contentType: false
+        }).done(function (data) {
+          console.log(data);
+        });
 
-  event.preventDefault();
+      });
   });
-});
   
   </script>
 
