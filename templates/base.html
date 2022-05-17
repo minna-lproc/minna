@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Project MinNa</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style type="text/css">
+    /* Set the size of the div element that contains the map */
+    #map {
+      height: 800px;
+      /* The height is 800 pixels */
+      width: 100%;
+      /* The width is the width of the web page */
+    }
+  </style>
+
+  <script>
+    var locations = [
+      ['Region IX: Zamboanga Peninsula (Zamboanga City)', 6.956277, 122.094281, 6],
+      ['Region X: Northern Mindanao (Cagayan de Oro City)', 8.3824627, 124.4926387, 5],
+      ['Region XI: Davao Region (Davao City)', 7.2532789, 125.1708753, 4],
+      ['Region XII: Soccsksargen (Koronadal City)', 6.4643402, 124.8424074, 3],
+      ['Region XIII: Caraga Region (Butuan City)', 8.8951832, 125.4423609, 2],
+      ['ARMM Region: Cotabato City', 7.1986708, 124.1744192, 1]
+    ];
+
+    // Initialize and add the map
+    function initMap() {
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 8,
+        center: new google.maps.LatLng(7.681631, 124.677049),
+        mapTypeId: google.maps.MapTypeId.HYBRID
+      });
+      // The marker, positioned at UIC
+      var infowindow = new google.maps.InfoWindow();
+
+      var marker, i;
+
+      for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+          map: map
+        });
+
+        google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
+          return function () {
+            infowindow.setContent(locations[i][0]);
+            infowindow.open(map, marker);
+          }
+        })(marker, i));
+      }
+
+    }
+  </script>
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  {% include 'navbar.html' %}
+
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="home">
+    <h2 class="w3-wide">A Web Portal and Repository for the Multimodal Mindanao Natural Language
+      Processing Tools, Technologies and Resources</h2>
+    <p class="w3-opacity"><i>Dayon kamo! Let's Tour MinNa Laboratory!</i></p>
+    <p class="w3-justify">Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+      fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+      deserunt mollit anim id est laborum consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-container w3-white">
+        <p><b>Tools</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+        <button class="w3-button w3-black w3-margin-bottom"
+          onclick="document.getElementById('ticketModal').style.display='block'">View</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-container w3-white">
+        <p><b>Technologies</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+        <button class="w3-button w3-black w3-margin-bottom"
+          onclick="document.getElementById('ticketModal').style.display='block'">View</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-container w3-white">
+        <p><b>Resources</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+        <button class="w3-button w3-black w3-margin-bottom"
+          onclick="document.getElementById('ticketModal').style.display='block'">View</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <!--The div element for the map -->
+  <div id="map">
+
+  </div>
+  <!-- The Contact Section -->
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">CONTACT US</h2>
+    <p class="w3-opacity w3-center"><i>Andam kami nga mualagad kaninyo!</i></p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col m6 w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker" style="width:30px"></i> UIC, Davao City<br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: +63905 228 8173<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: madayaw@uic.edu.ph<br>
+      </div>
+      <div class="w3-col m6">
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+          <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNc_aHa9fNKbTS1amE0gSO2ouOj9trU8U&callback=initMap&libraries=&v=weekly"
+    async>
+    </script>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+  </script>
+</body>
+
+</html>

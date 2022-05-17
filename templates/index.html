@@ -1,0 +1,102 @@
+{% extends 'template.html' %}
+{% block content %}
+<!-- Welcome Section -->
+<section class="hero-area">
+  <!-- <video autoplay muted loop class="hero-video">
+      <source src="../static/img/icons/bg-vid.mp4" type="video/mp4">
+    </video> -->
+  <div class="block">
+    <h1>MinNa LProc</h1>
+    <p>Mindanao Natural Language Processing Research and Development Laboratory</p>
+    <br>
+    <a href="{{ url_for('index') }}#home" class="btn btn-transparent">Dayon kamo!</a>
+  </div>
+</section>
+
+
+<!-- Home Section -->
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1200px " id="home">
+
+  <div class="w3-third w3-margin-bottom">
+    <div class="w3-container">
+      <p><b>Tools</b></p>
+      <img class="w3-hover-grayscale" src="../static/img/icons/tools-1.png" alt="tools"
+        style="width: 200px;height: 200px;">
+      <p>Software Tools to use for task-specific NLP operations.</p>
+    </div>
+  </div>
+  <div class="w3-third w3-margin-bottom">
+    <div class="w3-container">
+      <p><b>Technologies</b></p>
+      <a href = "{{url_for('technology')}}#technology"><img class="w3-hover-grayscale" src="../static/img/icons/techies-2.png" alt="tools"
+        style="width: 200px;height: 200px;"></a>
+      <p>Software and applications developed applying NLP techniques.</p>
+    </div>
+  </div>
+  <div class="w3-third w3-margin-bottom">
+    <div class="w3-container">
+      <p><b>Resources</b></p>
+      <a href = "{{ url_for('resources') }}#resources"><img class="w3-hover-grayscale" src="../static/img/icons/resources-2.png" alt="tools"
+        style="width: 200px;height: 200px;"></a>
+      <p>Raw and curated data for NLP.</p>
+    </div>
+  </div>
+
+  <div class="w3-container">
+    <p class="w3-justify">MinNa is a research and development laboratory established to work on the development of
+      Natural Language Processing (NLP) tools, technologies, and distributable digital resources of Mindanao
+      Languages.
+      With the increasing number of endangered languages, it is high time that we intensify research and development
+      works
+      that involve the collection, digitalization, storage, and dissemination of language resources, as well as the
+      development
+      of task-specific trained applications.
+    </p>
+    <p class="w3-justify">MinNa Laboratory has been generously funded by the
+      <a href="https://pcieerd.dost.gov.ph/">Department of Science and Technology - Philippine Council for
+        Industry, Energy and Emerging Technology Research and Development
+        (DOST-PCIEERD)</a> with high-end equipment to enable Mindanao NLP researchers conduct research works.
+      The <a href="https://www.uic.edu.ph/">University of the Immaculate Conception</a>
+      serves as the implementing agency to advance these research works to its complete implementation and deployment.
+    </p>
+
+    <br><br><br>
+  </div>
+</div>
+
+<!-- The Map Section -->
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1200px" id="map"></div>
+
+<!-- The Contact Section -->
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:950px " id="contact">
+  <h2 class="w3-wide w3-center">CONTACT US</h2>
+  <p class="w3-opacity w3-center"><i>Andam kami nga mualagad kaninyo!</i></p>
+  <div class="w3-row w3-padding-32">
+    <div class="w3-col m6 w3-large w3-margin-bottom w3-justify">
+      <p><i class="fa fa-map-marker" style="width:30px"></i>UIC, Fr. Selga St., Davao City, PH
+        <br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: +63905 228 8173<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: minna@uic.edu.ph<br>
+      </p>
+    </div>
+    <div class="w3-col m6">
+      <form action="" target="_blank">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+          </div>
+        </div>
+        <textarea class="w3-input w3-border" placeholder="Message" required name="Message" cols="50"
+          rows="10"> </textarea>
+        <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+</div>
+
+{% endblock %}

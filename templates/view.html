@@ -1,0 +1,188 @@
+{% extends 'template.html' %} {% block content %} 
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .container-fluid{
+    margin: 1em;
+   
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  /* Solid border */
+hr.solid {
+  border-top: 3px solid rgb(237, 237, 237);
+}
+  </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+ 
+      <h1>Cebuano Dataset</h1>
+  
+      <hr class="solid">
+
+      <div class="about-dataset">
+        <div class="context">
+          <h3>About Dataset</h3>
+          <br>
+          <h4>Context</h4>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut pariatur corporis maxime atque fugiat, itaque saepe harum molestias ullam nostrum.</p>
+          <br>
+          <h4>Content</h4>
+          <p>This dataset containts 6 different features of each talk available on TED's website which you can find below:</p>
+          <p>Bullet</p>
+          <br>
+          <h4>Image</h4>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut pariatur corporis maxime atque fugiat, itaque saepe harum molestias ullam nostrum.</p>
+        </div>
+        <hr class="solid">
+      </div>
+
+
+      <!-- Trigger/Open The Modal -->
+      <button type = "button" id="myBtn" class="btn btn-info">Request Data</button>
+      
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+      
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="modal-body">
+            <div class="alert alert-success" role="alert">
+              Your request has been sent successfully!
+             </div>
+            <form class="form-group" method="POST" id = "contactForm">
+                <label for = "name">Name</label>
+                <input type="text" id="name" id="name" class="form-control" required/>
+                <br />
+                <label for = "email">Email</label>
+                <input type="email" id="email" id="email" class="form-control" required/>
+                <br />
+                <label for = "organization">Organization</label>
+                <input type="text" id="organization" id="email" class="form-control" required/>
+                <br />
+                <label for="exampleFormControlTextarea3">Letter of Request</label>
+                <textarea class="form-control" id="message" rows="7"></textarea>
+                <br />  
+                <label>Attach File (Optional)</label>
+                <div class="form-group">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="message" id = "file">
+                  </div>
+                </div>
+                <button type = "submit" class="btn btn-success">Submit</button>
+              </form>
+           </div>
+           <div class="modal-footer">
+          <!-- <button type="submit" class="btn btn-success">Submit</button> -->
+           </div>
+          </div>
+         </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  <script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+  
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+  
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+
+  $(document).ready(function () {
+  $("form").submit(function (event) {
+    var formData = {
+      name: $("#name").val(),
+      email: $("#email").val(),
+      organization: $("#organization").val(),
+      message: $("#message").val(),
+
+      superheroAlias: $("#superheroAlias").val(),
+    };
+   
+		  	formData.append("file", document.getElementById('file').files);
+				
+        console.log(formData)
+
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "process.php",
+  //     data: formData,
+  //     dataType: "json",
+  //     encode: true,
+  //   }).done(function (data) {
+  //     console.log(data);
+  //   });
+
+  //   event.preventDefault();
+  // });
+
+  event.preventDefault();
+  });
+});
+  
+  </script>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "template.html" %}
+{% block content %}
+<div id="people" class="w3-container w3-center w3-content w3-padding-64" style="max-width:950px">
+    <div class="w3-row-padding">
+        <h3 align="left">Computing and Technology</h3>
+        <hr class="rounded">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <img class="w3-card" src="../static/img/people/Adlaon.png" alt="Adlaon" style="width: 100%">
+            <h5>Kristine Mae M. Adlaon</h5>
+            <h6 class="w3-opacity">Head, MinNa LProc R&D Lab</h6>
+            <a href="">CV </a>| <a href="">Bio Note </a>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <img class="w3-card" src="../static/img/people/Manseras.png" alt="Manseras" style="width: 100%">
+            <h5>Aurora Cristina A. Manseras</h5>
+            <h6 class="w3-opacity">Project Assistant</h6>
+            <a href="">CV </a>| <a href="">Bio Note </a>
+        </div>
+        {% for n in range(5) %}
+        <br>
+        {% endfor %}
+    </div>
+    <div class="w3-row-padding">
+        <h3 align="left">Languages</h3>
+        <hr class="rounded">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <img class="w3-card" src="../static/img/icons/no-image.png" alt="Mamonong" style="width: 100%">
+            <h5>Virgion H. Mamonong, LPT,Ph.D.</h5>
+            <h6 class="w3-opacity">Faculty Researcher</h6>
+            <a href="">CV </a>| <a href="">Bio Note </a>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <img class="w3-card" src="../static/img/icons/no-image.png" alt="Vasay" style="width: 100%">
+            <h5>Ma. Juliet G. Vasay</h5>
+            <h6 class="w3-opacity">Faculty Researcher</h6>
+            <a href="">CV </a>| <a href="">Bio Note </a>
+        </div>
+        {% for n in range(5) %}
+        <br>
+        {% endfor %}
+    </div>
+    <div class="w3-row-padding">
+        <h3 align="left">Graduate Students</h3>
+        <hr class="rounded">
+        {% for n in range(5) %}
+        <br>
+        {% endfor %}
+    </div>
+    <div class="w3-row-padding">
+        <h3 align="left">Undergraduate Students</h3>
+        <hr class="rounded">
+        {% for n in range(5) %}
+        <br>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
