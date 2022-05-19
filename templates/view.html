@@ -1,4 +1,4 @@
-{% extends 'template.html' %} {% block content %} 
+{% extends 'template.html' %} {% block content %}
 <style>
   body {
     font-family: Arial, Helvetica, sans-serif;
@@ -6,9 +6,9 @@
 
   .container-fluid{
     margin: 1em;
-   
+
   }
-  
+
   /* The Modal (background) */
   .modal {
     display: none; /* Hidden by default */
@@ -23,7 +23,7 @@
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
-  
+
   /* Modal Content */
   .modal-content {
     background-color: #fefefe;
@@ -32,7 +32,7 @@
     border: 1px solid #888;
     width: 80%;
   }
-  
+
   /* The Close Button */
   .close {
     color: #aaaaaa;
@@ -40,7 +40,7 @@
     font-size: 28px;
     font-weight: bold;
   }
-  
+
   .close:hover,
   .close:focus {
     color: #000;
@@ -55,9 +55,9 @@ hr.solid {
   </head>
   <body>
     <div class="container-fluid">
- 
+
       <h1>Cebuano Dataset</h1>
-  
+
       <hr class="solid">
 
       <div class="about-dataset">
@@ -80,10 +80,10 @@ hr.solid {
 
       <!-- Trigger/Open The Modal -->
       <button type = "button" id="myBtn" class="btn btn-info">Request Data</button>
-      
+
       <!-- The Modal -->
       <div id="myModal" class="modal">
-      
+
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -103,11 +103,11 @@ hr.solid {
                 <br />
                 <label for="exampleFormControlTextarea3">Letter of Request</label>
                 <textarea class="form-control" id="message" rows="7"></textarea>
-                <br />  
+                <br />
                 <label>Attach File (Optional)</label>
                 <div class="form-group">
                   <div class="custom-file">
-                    <input type="file" class="custom-file-input" name="message" id = "file">
+                    <input type="file" class="custom-file-input" name="file" id = "file">
                   </div>
                 </div>
                 <button type = "submit" class="btn btn-success">Submit</button>
@@ -126,23 +126,23 @@ hr.solid {
   <script>
   // Get the modal
   var modal = document.getElementById("myModal");
-  
+
   // Get the button that opens the modal
   var btn = document.getElementById("myBtn");
-  
+
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
-  
-  // When the user clicks the button, open the modal 
+
+  // When the user clicks the button, open the modal
   btn.onclick = function() {
     modal.style.display = "block";
   }
-  
+
   // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
     modal.style.display = "none";
   }
-  
+
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
     if (event.target == modal) {
@@ -156,7 +156,7 @@ hr.solid {
       event.preventDefault();
 
       var formData = new FormData();
-		  formData.append("file", document.getElementById('file').files);
+		  formData.append("file", document.getElementById('file').files[0]);
       formData.append('name', $('#name').val());
       formData.append('email', $('#email').val());
       formData.append('organization', $('#organization').val());
@@ -176,7 +176,8 @@ hr.solid {
 
       });
   });
-  
+
+
   </script>
 
 {% endblock %}
