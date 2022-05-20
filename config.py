@@ -6,7 +6,7 @@ DEBUG = True
 # Define the application directory
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
-UPLOAD_PATH = os.path.join(BASE_DIR, 'storage')
+UPLOAD_FOLDER = os.path.join(BASE_DIR, 'storage')
 MAX_CONTENT_LENGTH = 16 * 1024 * 1024
 # UPLOAD_EXTENSIONS
 GOOGLEMAPS_KEY = "AIzaSyDNc_aHa9fNKbTS1amE0gSO2ouOj9trU8U"
@@ -15,9 +15,11 @@ MAIL_SERVER = "smtp.gmail.com"
 MAIL_PORT = "587"
 MAIL_USE_TLS = "True"
 MAIL_USE_SSL = "False"
-MAIL_USERNAME = "test.smptp404@gmail.com"
-MAIL_PASSWORD = "testingpassword123"
-
+MAIL_USERNAME = "joe.clio001@gmail.com"
+MAIL_PASSWORD = "wysiwyg15"
+# nmvwntgtnucnlcgx
+# sampleemail123
+# cfflzfrsehwdixfs
 # Application threads. A common general assumption is
 # using 2 per available processor cores - to handle
 # incoming requests using one and performing background

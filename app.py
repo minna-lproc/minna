@@ -1,3 +1,4 @@
+import os
 from asyncio import create_task
 from unicodedata import name
 from urllib import response
@@ -19,16 +20,16 @@ app.config.from_object('config')
 GoogleMaps(app)
 mail = Mail(app)
 
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = set(['txt', 'docx' ,'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 try:
     connection = pymysql.connect(
-        host='localhost',
+        host='127.0.0.1',
         user='root',
-        password='',
+        password='password',
         db='minna_local',
         charset='utf8mb4',
         cursorclass=pymysql.cursors.DictCursor
@@ -58,28 +59,6 @@ def people():
 def process_form():
     return render_template("process_form.html")
 
-# @app.route("/send", methods=["POST"])
-# def send():
-#     mail = MIMEMultipart("alternative")
-#     mail["Subject"] = mail_subject
-#     mail["From"] = mail_from
-#     mail["To"] = mail_to
-
-#     data = dict(request.form)
-#     msg = "<html><head></head><body>"
-#     for key, value in data.items():
-#         msg += key + " : " + value + "<br>"
-#         msg += "</body></html>"
-#         mail.attach(MIMEText(msg, "html"))
-
-#         mailer = smtplib.SMTP("localhost")
-#         mailer.sendmail(mail_from. mail_to, mail.as_string())
-#         mailer.quit()
-
-#         res = make_response("OK", 200)
-#         return res
-
-
 @app.route("/view", methods = ['GET', 'POST'])
 def view():
     if request.method == 'POST':
@@ -87,61 +66,39 @@ def view():
         email = request.form.get('email')
         organization = request.form.get('organization')
         message = request.form.get('message')
-
-
-        # msg = Message(subject  = f"Mail from {name}", body = f" Name: {name}\n E-Mail: {email}\n Organization:{organization}\n\nMessage: {message}",  sender = mail_username, recipients = ['alemaniacamilleite111@gmail.com'])
-        # # mail.send(msg)
+        # sender = MAIL_USERAME, recipients = ["'alemaniacamilleite111@gmail.com'"]
 
         f = request.files['file']
         filename = f.filename
-        f.save(secure_filename(filename))
+        f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         with connection.cursor() as cursor:
                 prepared_qry = 'INSERT INTO `requestdataset` (name, email, organization, message, file) VALUES (%s, %s, %s, %s, %s)'
                 cursor.execute(prepared_qry,(name, email, organization, message, filename))
                 connection.commit()
-            # with connection.cursor() as cursor:
-            #     sql = "SELECT * FROM students"
-            #     cursor.execute(sql)
-            # for result in cursor.fetchall():
-            #     print(result, '<br>')
-        # finally:
-        #     connection.close()
 
-        # print('Last inserted key:')
-        # print(result.inserted_primary_key)
+        try:
+            msg = Message(
+                subject  = f"Mail from {name}",
+                body = f" Name: {name} E-Mail: {email}\n Organization:{organization}\n\nMessage: {message}",
+                sender = email,
+                recipients = ["alemaniacamilleite111@gmail.com"]
+            )
+            res = mail.send(msg)
+            pring(res)
+        except Exception as e:
+                print(msg)
 
-        resp = {'message': 'Successfull request', 'name': name}
+        resp = {'message': 'Successfull request'}
         return make_response(jsonify(resp), 200)
+
     return render_template("view.html")
 
-    #     # name = request.form.get('name')
-    #     # email = request.form.get('email')
-    #     # organization = request.form.get('organization')
-    #     # message = request.form.get('message')
-    #     # msg = Message(subject  = f"Mail from {name}", body = f" Name: {name} E-Mail: {email}\n Organization:{organization}\n\nMessage: {message}",
-    #     # sender = mail_username, recipients = ['"alemaniacamilleite111@gmail.com"'])
-    #     # mail.send(msg)
-    # # try:
-    # #     mail = mail.send.get('MAIL_USERNAME')
-    # #     print(response.status_code)
-    # #     print(response.body)
-    # #     print(response.headers)
-    # # except Exception as e:
-    # #         print(e.message)
-    # #     result = {}
-    # #     result ['name'] = request.form['name']
-    # #     result ['email'] = request.form['email'].replace(' ', '').lower()
-    # #     result ['message'] = request.form['message']
-
-    # # sendTestEmail(result)
-
-    # return render_template('view.html', success=True)
-    # # return render_template('view.html', ** locals())
 
 @app.route("/req")
 def req():
     return render_template('req.html')
+
 
 @app.route("/cebuano")
 def cebuano():
