@@ -16,7 +16,11 @@ MAIL_PORT = "587"
 MAIL_USE_TLS = "True"
 MAIL_USE_SSL = "False"
 MAIL_USERNAME = "joe.clio001@gmail.com"
-MAIL_PASSWORD = "wysiwyg15"
+MAIL_PASSWORD = "Wysiwyg15!"
+MAIL_RECEIVER = "alemaniacamilleite111@gmail.com"
+
+
+
 # nmvwntgtnucnlcgx
 # sampleemail123
 # cfflzfrsehwdixfs
