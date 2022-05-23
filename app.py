@@ -126,19 +126,19 @@ def view():
                 subject  = f"Mail from {name} ",
                 body = f" Name: {name}\nE-Mail: {email}\n Organization:{organization}\n\nMessage: {message}",
                 sender = MAIL_USERNAME,
-                recipients = ['alemaniacamilleite111@gmail.com']
+                recipients = ['joe.clio001@gmail.com']
             )
 
-            mail.send(msg)
-        for path in files:
-             part = MIMEBase('application', "octet-stream")
-        with open(path, 'rb') as file:
-            part.set_payload(file.read())
-            encoders.encode_base64(part)
-            part.add_header('Content-Disposition',
-                    'attachment; filename={}'.format(Path(path).name))
-        msg.attach(part)
 
+            # for path in f:
+            # part = MIMEBase('application', "octet-stream")
+            # with open(fullFilePath, 'rb') as file:
+            #     part.set_payload(file.read())
+            #     encoders.encode_base64(part)
+            #     part.add_header('Content-Disposition',
+            #         'attachment; filename={}'.format(Path(path).name))
+            # msg.attach(part)
+            mail.send(msg)
         # smtp = smtplib.SMTP(server, port)
         # if use_tls:
         #     smtp.starttls()

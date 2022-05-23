@@ -17,7 +17,7 @@ MAIL_USE_TLS = "True"
 MAIL_USE_SSL = "False"
 MAIL_USERNAME = "joe.clio001@gmail.com"
 MAIL_PASSWORD = "Wysiwyg15!"
-MAIL_RECEIVER = "alemaniacamilleite111@gmail.com"
+MAIL_RECEIVER = "joe.clio001@gmail.com"
 
 
 
