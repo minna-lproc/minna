@@ -1,0 +1,215 @@
+{% extends 'template.html' %}
+{% block content %}
+
+<style>
+        body {
+                background-color: #ffffff;
+        }
+</style>
+
+
+<br><br>
+
+
+<br><br>
+<style>
+        .line-class {
+                border-bottom: 1px solid rgb(0, 0, 0);
+                width: 100%;
+                margin: 0;
+                margin-bottom: 20px;
+        }
+</style>
+
+<div class="container" style="min-height: 100%;">
+        <!-- three cards with image in a row -->
+        <style>
+                .card-title {
+                        font-size: 2em;
+                        font-weight: bold;
+                        color: #000000;
+                        text-align: center;
+                        margin-bottom: 20px;
+                }
+
+                .card-text {
+                        font-size: 1em;
+                        color: #000000;
+                        margin-bottom: 20px;
+                }
+
+                .btnsp {
+                        border: 2px solid black;
+                        background-color: white;
+                        color: black;
+                        padding: 14px 28px;
+                        font-size: 16px;
+                        cursor: pointer;
+                }
+
+                /* Green */
+                .successsp {
+                        border-color: #3F51B5;
+                        color: #3F51B5;
+                }
+
+                .successsp:hover {
+                        background-color: #3F51B5;
+                        color: white;
+                }
+        </style>
+        <div class="row">
+                <div class="col-sm-4">
+                        <div class="card">
+                                <img style="width: 150px; margin-left: 100px; margin-top: 20px; " class="  card-img-top"
+                                        src="{{ url_for('static', filename='img/Alima_With_Text.png') }}"
+                                        alt="Card image cap">
+                                <div class="card-body" style="margin-bottom: 40px;">
+                                        <h5 class="card-title">Minna LProc</h5>
+                                        <p class="card-text" style = "text-align: justify;">Alima is a mobile application that aims to help preserve different languages in the Philippines through gathering and storing multimodal information such as text, audio and images. The gathered data later on can be used by all of the users in the application. 
+                                        </p>
+
+                                        <!-- button outline with mobile icon-->
+
+
+                                </div>
+                                <div class="text-center ">
+                                        <!-- mobile icon svg -->
+                                       
+
+                                        <a href="/app_alima" class="btnsp successsp"> <i style="margin-left: 10px;  " class="fa fa-mobile"
+                                                aria-hidden="true"></i>
+                                                <span>View Details</span>
+                                        </a>
+
+                                </div>
+
+                        </div>
+                </div>
+                <div class="col-sm-4">
+                        <div class="card">
+                                <img style="width: 150px; margin-left: 100px; margin-top: 20px; " class="  card-img-top"
+                                        src="{{ url_for('static', filename='img/Alima_With_Text.png') }}"
+                                        alt="Card image cap">
+                                <div class="card-body" style="margin-bottom: 40px;">
+                                        <h5 class="card-title">Minna LProc</h5>
+                                        <p class="card-text" style = "text-align: justify;">Alima is a mobile application that aims to help preserve different languages in the Philippines through gathering and storing multimodal information such as text, audio and images. The gathered data later on can be used by all of the users in the application. 
+                                        </p>
+
+                                        <!-- button outline with mobile icon-->
+
+
+                                </div>
+                                <div class="text-center ">
+                                        <a href="/app_alima" class="btnsp successsp"> <i class="fa fa-mobile"
+                                                aria-hidden="true"></i>
+                                                <span>View Details</span>
+                                        </a>
+
+                                </div>
+
+                        </div>
+                </div>
+                <div class="col-sm-4">
+                        <div class="card">
+                                <img style="width: 150px; margin-left: 100px; margin-top: 20px; " class="  card-img-top"
+                                        src="{{ url_for('static', filename='img/Alima_With_Text.png') }}"
+                                        alt="Card image cap">
+                                <div class="card-body" style="margin-bottom: 40px;">
+                                        <h5 class="card-title">Minna LProc</h5>
+                                        <p class="card-text" style = "text-align: justify;">Alima is a mobile application that aims to help preserve different languages in the Philippines through gathering and storing multimodal information such as text, audio and images. The gathered data later on can be used by all of the users in the application. 
+                                        </p>
+
+                                        <!-- button outline with mobile icon-->
+
+
+                                </div>
+                                <div class="text-center ">
+                                        <a href="/app_alima" class="btnsp successsp"> <i class="fa fa-mobile"
+                                                aria-hidden="true"></i>
+                                                <span>View Details</span>
+                                        </a>
+
+                                </div>
+
+                        </div>
+                </div>
+
+        </div>
+        <div class="row" style="margin-top: 100px; margin-bottom: 150px;">
+                <div class="col-sm-4">
+                        <div class="card">
+                                <img style="width: 150px; margin-left: 100px; margin-top: 20px; " class="  card-img-top"
+                                        src="{{ url_for('static', filename='img/Dapok.png') }}"
+                                        alt="Card image cap">
+                                <div class="card-body" style="margin-bottom: 40px;">
+                                        <h5 class="card-title">Minna LProc</h5>
+                                        <p class="card-text"style = "text-align: justify;">DaPok is a mobile application for data collection. It consists of phrases that will be translated by the people from Kagan/Kalagan, Mansaka, and Manobo tribes.</p>
+
+                                        <!-- button outline with mobile icon-->
+
+
+                                </div>
+                                <div class="text-center ">
+                                        <a href="/app_dapok" class="btnsp successsp"> <i class="fa fa-mobile"
+                                                aria-hidden="true"></i>
+                                                <span>View Details</span>
+                                        </a>
+
+                                </div>
+
+                        </div>
+                </div>
+                <div class="col-sm-4">
+                        <div class="card">
+                                <img style="width: 150px; margin-left: 100px; margin-top: 20px; " class="  card-img-top"
+                                        src="{{ url_for('static', filename='img/Dapok.png') }}"
+                                        alt="Card image cap">
+                                <div class="card-body" style="margin-bottom: 40px;">
+                                        <h5 class="card-title">Minna LProc</h5>
+                                        <p class="card-text"style = "text-align: justify;">DaPok is a mobile application for data collection. It consists of phrases that will be translated by the people from Kagan/Kalagan, Mansaka, and Manobo tribes.</p>
+                                        <!-- button outline with mobile icon-->
+
+
+                                </div>
+                                <div class="text-center ">
+                                        <a href="/app_dapok" class="btnsp successsp"> <i class="fa fa-mobile"
+                                                aria-hidden="true"></i>
+                                                <span>View Details</span>
+                                        </a>
+
+                                </div>
+
+                        </div>
+                </div>
+                <div class="col-sm-4">
+                        <div class="card">
+                                <img style="width: 150px; margin-left: 100px; margin-top: 20px; " class="  card-img-top"
+                                        src="{{ url_for('static', filename='img/Dapok.png') }}"
+                                        alt="Card image cap">
+                                <div class="card-body" style="margin-bottom: 40px;">
+                                        <h5 class="card-title">Minna LProc</h5>
+                                        <p class="card-text"style = "text-align: justify;">DaPok is a mobile application for data collection. It consists of phrases that will be translated by the people from Kagan/Kalagan, Mansaka, and Manobo tribes.</p>
+
+                                        <!-- button outline with mobile icon-->
+
+
+                                </div>
+                                <div class="text-center ">
+                                        <a href="/app_dapok" class="btnsp successsp"> <i class="fa fa-mobile"
+                                                aria-hidden="true"></i>
+                                                <span>View Details</span>
+                                        </a>
+                                </div>
+
+                        </div>
+                </div>
+
+        </div>
+
+
+
+
+</div>
+
+{% endblock %}
