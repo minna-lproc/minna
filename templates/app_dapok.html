@@ -1,0 +1,118 @@
+{% extends 'template.html' %}
+{% block content %}
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+    body {
+        background-color: #ffffff;
+    }
+</style>
+
+
+<br><br>
+
+
+<br><br>
+<style>
+    .line-class {
+        border-bottom: 1px solid rgb(0, 0, 0);
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class="container">
+    <div class="flex  justify-between">
+        <div class="flex 	">
+            <div>
+                <img style="width: 100px;  " src="{{ url_for('static', filename='img/Dapok.png') }}"
+                    alt="Card image cap">
+            </div>
+            <div class="ml-8 flex flex-col justify-around	">
+                <h1 class="text-4xl font-bold text-gray-800">
+                    Dapok
+                </h1>
+                <p class="text-gray-600 mt-2">
+                    Minna LProc
+                </p>
+                <div class="flex ">
+                    <div class="flex flex-col m-2">
+                        <p class="text-gray-600 font-bold text-2xl">
+                            Team Dapok
+                        </p>
+                        <p class="text-gray-600">
+                            Villaflores, Pisao
+
+                        </p>
+
+
+                    </div>
+                    <div class="flex flex-col m-2">
+                        <p class="text-gray-600 font-bold text-2xl">
+                            Date added
+                        </p>
+                        <p class="text-gray-600">
+                            Apr 22, 2020
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="flex flex-col">
+            <p class="text-4xl font-bold text-gray-800">
+                <a href="#">Download</a>
+            </p>
+            <p class="text-gray-800">
+                Version 1.1
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- <br><br> -->
+
+    <div class="line-class " style="margin-top: 30px;">
+
+    </div>
+    <div>
+        <p class="text-2xl font-light leading-relaxed mt-6  ">
+            DaPok is an application that collects data from languages such as Kagan/Kalagan, Mansaka, and Manobo. The collected data will be used for future reference as well as future research or study.
+        </p>
+    </div>
+    <div>
+        <p class="text-4xl m-8 font-bold text-gray-800">
+            Dapok Overview
+
+        </p>
+        <div class="m-8 ">
+                <img style="float: left; margin: 0px 0px 15px 15px;" src="{{ url_for('static', filename='img/dap1.png') }}" width="300px" height="500px" />
+                <img style="float: left; margin: 0px 0px 15px 15px;" src="{{ url_for('static', filename='img/dap2.png') }}" width="300px" height="500px" />
+                <img style="float: left; margin: 0px 0px 15px 15px;" src="{{ url_for('static', filename='img/dap3.png') }}" width="300px" height="500px" />
+                <img style="float: left; margin: 0px 0px 15px 15px;" src="{{ url_for('static', filename='img/dap4.png') }}" width="300px" height="500px" />
+
+        </div>
+
+
+    </div>
+    
+
+
+
+
+    <!-- </div> -->
+
+</div>
+
+{% endblock %}
+<!-- 
+</body>
+</html>
+ -->

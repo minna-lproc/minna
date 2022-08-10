@@ -1,28 +1,128 @@
 {% extends "template.html" %}
 {% block content %}
+<div>
+    <img class=" text-center" src="../static/img/news/1-IMG_4478.jpg" alt="logo"
+          style="width: 100%;  padding-bottom: 5em;">
+  
+  </div>
 <div class="w3-container w3-content w3-padding-64" style="max-width:1600px" id="news">
-    <div class="w3-light-grey w3-leftbar w3-border-blue">
-        <p><strong><a href="#"> MinNa LProc secures funding from DOST-PCIEERD </a></strong> <br>
-            <small>By: <strong>Aurora Cristina A. Manseras </strong></small><br>
-            <small>Posted on <strong>November 1, 2021 </strong></small>
-        </p>
+    <div class="">
+       
+        
+        <h3 style="color: #3F51B5; padding-left: 4%; font-size: 300%;"><strong> MinNa Laboratory Blessing and MOU Signing</strong> 
+            
+        </h3>
+        <small style ="padding-left: 4%;">Posted on <strong>December 10, 2021 </strong></small>
         <br>
-        <p style="text-align:center"><img class="w3-hover-grayscale" src="../static/img/news/dost-pcieerd-uic.png" alt="logo"
-                style="max-width: 100%;max-height: 100%;"></p>
         <br>
-        <div style="text-align:justify; max-width: 98.5%;">
-            <p>The Mindanao Natural (MinNa) Language Processing (LProc) Research and Development Laboratory, with the University of the Immaculate Conception (UIC)
-              as its implementing agency, was granted funding support by the Department of Science and Technology – Philippine Council for Industry, Energy, and
-              Emerging Technology Research and Development (DOST–PCIEERD). </p>
-            <p>A Memorandum of Agreement (MOA) was signed between UIC President Sr. Marissa R. Viri, RVM and DOST–PCIEERD Executive Director
-              Dr. Enrico C. Paringit on September 23, 2021. The grant, amounting to P5,000,000.00, will be directed towards intensifying research
-              and development works to help preserve and protect endangered languages in the Philippines.</p>
-            <p>The MinNa LProc laboratory will be equipped with high-end equipment to enable Mindanao Natural Language Processing (NLP) researchers
-              to conduct research works focusing on three Mindanao languages, namely Manobo, Mansaka, and Kalagan. </p>
-            <p>Read the full story <a href="https://www.uic.edu.ph/uic-gets-dost-support-for-rd-lab/">here</a>.</p>
+        <!-- <div style="text-align:justify; max-width: 98.5%;"> -->
+            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; flex-wrap: wrap;"></div>
+            <p style = "width: 95%; font-weight: bolder; padding-left: 4%; font-size: 145%; padding-top: 1%;">The blessing of the Mindanao Natural (MinNa) Language Processing (LProc) Research and Development Laboratory was held last
+                December 8, 2021 at the University of the Immaculate Conception (UIC), Fr. Selga campus.</p>
+            <p style = "width: 95%; padding-left: 4%; text-align: justify; font-size: 120%; padding-top: 3%;">The event started with a mass at 8:30 AM celebrating the Solemnity of the Immaculate Conception of the
+                Blessed Virgin Mary. This was officiated by Rev. Fr. Rene Ribac. The blessing took place afterwards
+                and was attended by guests and several members of the UIC Community. Also present during this occasion were
+                Dr. Anthony C. Sales, CESO III, Regional Director of the Department of Science and Technology (DOST) Region XI, and
+                Mr. Rod John Pandili, Founder and President of the Lumon Community Association. </p>
+            
+
+            <p style = "width: 95%; padding-left: 4%; text-align: justify; font-size: 120%; padding-top: 1%;">A Memorandum of Understanding was also signed between MinNa LProc and the Lumon Community Association, a non-governmental
+                organization providing charitable services to transform communities at the grassroots level of society through active
+                volunteerism. The MOU is an agreement between MinNa LProc and the Lumon Community to work together as collaborating partners
+                in the conduct of the activities and projects of the laboratory. </p>
+           
+            <p style = "width: 95%; padding-left: 4%; text-align: justify; font-size: 120%; padding-top: 1%;">The MinNa LProc laboratory is funded by DOST–PCIEERD and was established to work on the development of Natural Language
+                Processing (NLP) tools, technologies, and distributable digital resources of Mindanao Languages, focusing on the Manobo,
+                Mansaka, and Kalagan. </p>
+
+                <h4 style="color:#3F51B5; padding-top: 5%; font-size: 200%; ">Photos</h4><br>
+                     <div class="line-class">
+                             
+                     </div>
+
+                <p style="text-align:center; padding-top: 3%;"><img class="#" src="../static/img/news/2-IMG_4475.jpg" alt="blessing2"
+                    style="max-width: 70%;"> </p>
+           <p style="text-align:center"><img class="#" src="../static/img/news/3-IMG_5049-credit.jpg" alt="blessing3"
+                    style="max-width: 70%">
+              
+           </p>
+           <p style="text-align:center"><img class="#" src="../static/img/news/4-IMG_5052-credit.jpg" alt="blessing4"
+                    style="max-width: 70%">
+               
+           </p>
+            
+
+
         </div>
     </div>
-    <br><br>
 </div>
+
+<style>
+    .line-class{
+            border-bottom: 1px solid rgb(0, 0, 0);
+            width: 100%;
+            margin: 0 ;
+            margin-bottom: 20px;
+    }
+    
+  </style>
+  
+  <div class="w3-content w3-row-padding" style="max-width:1600px" id="activities">
+    <h2 style="color:#3F51B5;">News and Events</h2><br>
+                  <div class="line-class">
+                      </div>
+                      <div class="w3-third  ">
+                        <h3><a href="{{ url_for('news01')}}"> MinNa Laboratory Blessing and MOU Signing </a> <br>
+                        </h3>
+                        <p style="text-align:center"><img src="../static/img/news/1-IMG_4478.jpg" alt="blessing"
+                                style="max-width: 100%;max-height: 100%; height: 300px; border: 1px solid #ddd;"></p>
+                        <div style="text-align:justify; max-width: 98.5%;">
+                            <p>The blessing of the Mindanao Natural (MinNa) Language Processing (LProc) Research and Development
+                                Laboratory was held last December 8, 2021 at the University of the Immaculate Conception (UIC),
+                                Fr. Selga campus...</strong></p>
+                                <div>
+                                    <a href="{{ url_for('news01')}}">read more...</a>
+                                    
+                                </div>
+                        </div>
+                    </div>                   
+    
+    <div class="w3-third ">
+        <h3><a href="{{ url_for('news02')}}"> MinNa LProc secures funding from DOST-PCIEERD </a><br></h3>
+        <p style="text-align:center"><img src="../static/img/news/dost-pcieerd-uic.png" alt="group5"
+                style="max-width: 100%;max-height: 100%; height: 300px; border: 1px solid #ddd;"></p>
+        <div style="text-align:justify; max-width: 98.5%;">
+            <p>The Mindanao Natural (MinNa) Language Processing (LProc) Research and Development Laboratory, with the
+                University of the
+                Immaculate Conception (UIC) as its implementing agency, was granted funding support by the Department of
+                Science and
+                Technology...</strong> </p>
+            <div>
+                <a href="{{ url_for('news02')}}">read more...</a>
+                
+            </div>
+        </div>
+    </div>
+    <div class="w3-third ">
+        <h3><a href="{{ url_for('news03')}}"> DOST-PCIEERD to put up 3 new laboratories, includes MinNa LProc </a> <br>
+        </h3>
+        <p style="text-align:center"><img src="../static/img/news/dost-pcieerd-group-photo.png" alt="groupPhoto"
+                style="max-width: 100%;max-height: 100%; height: 300px; border: 1px solid #ddd;"></p>
+        <div style="text-align:justify; max-width: 98.5%;">
+            <p>The Department of Science and Technology – Philippine Council for Industry, Energy, and Emerging
+                Technology Research and Development
+                (DOST-PCIEERD), under the Institution Development Program (IDP) will be establishing three (3) new
+                research facilities...</strong></p>
+                <div>
+                    <a href="{{ url_for('news03')}}">read more...</a>
+                    
+                </div>
+        </div>
+    </div>
+
+    
+  </div>
+  
+ 
 
 {% endblock %}

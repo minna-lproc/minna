@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -136,4 +137,176 @@
 
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block head %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" href="/static/img/icons/minna-logo.png" />
+  <link rel="stylesheet" href="../static/css/main.css">
+  <link rel="stylesheet" href="../static/css/meghna.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+  <script>
+    var locations = [
+      ['Region IX: Zamboanga Peninsula (Zamboanga City)', 6.956277, 122.094281, 6],
+      ['Region X: Northern Mindanao (Cagayan de Oro City)', 8.3824627, 124.4926387, 5],
+      ['Region XI: Davao Region (Davao City)', 7.2532789, 125.1708753, 4],
+      ['Region XII: Soccsksargen (Koronadal City)', 6.4643402, 124.8424074, 3],
+      ['Region XIII: Caraga Region (Butuan City)', 8.8951832, 125.4423609, 2],
+      ['ARMM Region: Cotabato City', 7.1986708, 124.1744192, 1]
+    ];
+
+    // Initialize and add the map
+    function initMap() {
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 8,
+        center: new google.maps.LatLng(7.681631, 124.677049),
+        mapTypeId: google.maps.MapTypeId.HYBRID
+      });
+      // The marker, positioned at UIC
+      var infowindow = new google.maps.InfoWindow();
+
+      var marker, i;
+
+      for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+          map: map
+        });
+
+        google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
+          return function () {
+            infowindow.setContent(locations[i][0]);
+            infowindow.open(map, marker);
+          }
+        })(marker, i));
+      }
+
+    }
+  </script>
+  <style>
+    a:hover {
+      text-decoration: none;
+    }
+  </style>
+
+  <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNc_aHa9fNKbTS1amE0gSO2ouOj9trU8U&callback=initMap&libraries=&v=weekly"
+    async>
+    </script>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+  </script>
+
+
+  <title>Project MinNa {% block title %} {% endblock %}</title>
+  {% endblock %}
+</head>
+<style>
+  body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+</style>
+<body style="background-color: white;">
+  <div id="content">
+    <div class="w3-top">
+      <div class="w3-bar w3-indigo w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+          href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="{{ url_for('index') }}" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <!--<a href="{{ url_for('activities') }}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">NEWS AND
+          ACTIVITIES</a>-->
+        <a href="{{ url_for('index') }}#map" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LANGUAGE
+          MAP</a>
+        <a href="{{ url_for('news') }}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">NEWS</a>
+        <!--<a href="{{ url_for('people') }}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">THE TEAM</a>-->
+        <!--<a href="{{ url_for('publications') }}"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small">PUBLICATIONS</a>-->
+        <a href="{{ url_for('index') }}#contact"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+
+        <a href="/people" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PEOPLE</a>
+
+        <!-- <a href="/technology" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TECHNOLOGY</a> -->
+      </div>
+    </div>
+    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+    <div id="navDemo" class="w3-bar-block w3-indigo w3-hide w3-hide-large w3-hide-medium w3-top"
+      style="margin-top:46px">
+           <a href="{{ url_for('index') }}#map" class="w3-bar-item w3-button w3-padding-large"
+             onclick="myFunction()">LANGUAGE MAP</a>
+           <a href="{{ url_for('news') }}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">NEWS</a>
+      <!--      <a href="{{ url_for('activities') }}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">NEWS-->
+      <!--        AND-->
+      <!--        ACTIVITIES</a>-->
+           <a href="{{ url_for('people') }}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PEOPLE</a>
+      <!-- <a href="{{ url_for('publications') }}" class="w3-bar-item w3-button w3-padding-large"
+        onclick="myFunction()">PUBLICATIONS</a> -->
+      <a href="{{ url_for('index') }}#contact" class="w3-bar-item w3-button w3-padding-large"
+        onclick="myFunction()">CONTACT</a>
+
+
+
+    </div>
+    <div><br>
+      {% block content %}
+
+      {% endblock %}
+    </div>
+    <style>
+      .footer-d {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: red;
+        color: white;
+        text-align: center;
+      }
+    </style>
+    <style>
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: red;
+        color: white;
+        text-align: center;
+      }
+
+   
+    </style>
+
+    <div style="margin-bottom: 0px;" class="w3-indigo w3-container footer-t " id="footer">
+      <p align="center">&copy; Copyright 2021 <a href="#">MinNa</a>. All Rights Reserved.</p>
+    </div>
+
+  </div>
+
+</body>
+
+>>>>>>> Delgado-Culango-Contrib
 </html>
